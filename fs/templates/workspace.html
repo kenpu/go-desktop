@@ -1,0 +1,16 @@
+<html>
+    <head>
+    <title>{{.Id}}</title>
+    {{template "head" .}}
+    </head>
+    <body>
+        <div class=container>
+            Workspace {{.Id}}
+        </div>
+        {{template "scripts" .}}
+        <script>
+var WORKSPACE_ID = {{.Id}};
+        </script>
+        <script src="/static/workspace.js"></script>
+    </body>
+</html>
