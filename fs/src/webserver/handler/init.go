@@ -26,7 +26,7 @@ func Fetch(c *gin.Context) {
 
 	log.Printf("id=\"%s\", resource=\"%s\"", workspaceId, resource)
 
-	content, err := ioutil.ReadFile(resolve(workspaceId, resource))
+	content, err := ioutil.ReadFile(Resolve(workspaceId, resource))
 	if err != nil {
 		panic(err.Error())
 	}
@@ -43,6 +43,6 @@ func Workspace(c *gin.Context) {
 	})
 }
 
-func resolve(id, p string) string {
+func Resolve(id, p string) string {
 	return filepath.Join("./workspaces", id, p)
 }

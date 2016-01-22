@@ -3,6 +3,8 @@ package webserver
 import (
 	"log"
 	"net/http"
+	"watchdog"
+	"webserver/handler"
 
 	"github.com/gorilla/websocket"
 )
@@ -20,5 +22,7 @@ func wshandler(workspaceId string, w http.ResponseWriter, r *http.Request) {
 	}
 	log.Printf("watching workspace %s", workspaceId)
 
-	_ = conn
+	dir := handler.Resolve(workspaceId, "")
+
+	watchdog.New(dir, conn).Start()
 }
