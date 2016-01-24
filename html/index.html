@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+        body {
+            display: fixed;
+            margin: 0;
+            left: 0;
+            top: 0;
+        }
+        .main {
+            display: flex;
+            flex-direction: row;
+        }
+        .main > div {
+            flex: 1;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100vh;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div>
+                <iframe src="http://db.science.uoit.ca:8080"></iframe>
+            </div>
+            <div>
+                <iframe
+                    src="http://db.science.uoit.ca:20000/workspace/1/"></iframe>
+            </div>
+        </div>
+    </body>
+</html>
